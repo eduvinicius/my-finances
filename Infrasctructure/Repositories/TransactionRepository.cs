@@ -30,6 +30,8 @@ namespace MyFinances.Infrasctructure.Repositories
                 .Take(filters.PageSize)
                 .OrderByDescending(t => t.Date)
                 .ThenByDescending(t => t.CreatedAt)
+                .Include(t => t.Account)
+                .Include(t => t.Category)
                 .ToListAsync();
         }
     }

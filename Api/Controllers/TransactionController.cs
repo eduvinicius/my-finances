@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyFinances.Api.DTOs;
 using MyFinances.App.Filters;
 using MyFinances.App.Services.Interfaces;
@@ -12,13 +13,15 @@ namespace MyFinances.Api.Controllers
         private readonly ITransactionService _transactionService = transactionService;
 
         [HttpGet]
-        public async Task<IActionResult> GetTransactions(TransactionFilters filters)
+        [Authorize]
+        public async Task<IActionResult> GetTransactions([FromQuery] TransactionFilters filters)
         {
             var transactions = await _transactionService.GetAllByUserId(filters);
             return Ok(transactions);
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetTransaction(Guid id)
         {
             var transaction = await _transactionService.GetByIdAsync(id);
@@ -30,6 +33,7 @@ namespace MyFinances.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateTransaction([FromBody] TransactionDto dto)
         {
             var transaction = await _transactionService.CreateAsync(dto);

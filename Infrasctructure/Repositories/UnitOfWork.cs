@@ -9,12 +9,12 @@ namespace MyFinances.Infrasctructure.Repositories
         IUserRepository userRepository,
         IAccountRepository accountRepository,
         ICategoryRepository categoryRepository,
-        IDbContextTransaction transaction,
         ITransactionRepository transactionRepository) : IUnitOfWork
     {
+
         private readonly FinanceDbContext _context = context;
 
-        private IDbContextTransaction? _transaction = transaction;
+        private IDbContextTransaction? _transaction;
         public IUserRepository Users { get; } = userRepository;
         public IAccountRepository Accounts { get; } = accountRepository;
         public ICategoryRepository Categories { get; } = categoryRepository;

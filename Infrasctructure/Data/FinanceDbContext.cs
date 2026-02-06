@@ -27,6 +27,19 @@ namespace MyFinances.Infrasctructure.Data
                 entity.Property(x => x.Type).IsRequired();
                 entity.Property(x => x.Description).IsRequired();
                 entity.Property(x => x.Date).IsRequired();
+
+                entity.HasOne(t => t.Account)
+                      .WithMany()
+                      .HasForeignKey(t => t.AccountId);
+
+                entity.HasOne(t => t.Category)
+                      .WithMany()
+                      .HasForeignKey(t => t.CategoryId);
+
+                entity.HasOne(t => t.User)
+                      .WithMany()
+                      .HasForeignKey(t => t.UserId)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<Category>(entity =>

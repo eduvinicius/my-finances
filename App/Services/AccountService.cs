@@ -42,7 +42,6 @@ namespace MyFinances.App.Services
                 throw new BadRequestException("Only credit accounts may start with negative balance.");
 
             var account = _mapper.Map<Account>(dto);
-            account.Id = Guid.NewGuid();
             account.UserId = _currentUserService.UserId;
             account.IsActive = true;
 
