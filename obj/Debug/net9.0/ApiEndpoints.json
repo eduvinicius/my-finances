@@ -116,6 +116,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyFinances.Api.Controllers.SummaryController",
+    "Method": "Get",
+    "RelativePath": "api/Summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MyFinances.Api.DTOs.SummaryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MyFinances.Api.Controllers.TransactionController",
     "Method": "GetTransactions",
     "RelativePath": "api/transaction",

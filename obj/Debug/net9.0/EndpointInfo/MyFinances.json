@@ -198,6 +198,35 @@
         }
       }
     },
+    "/api/Summary": {
+      "get": {
+        "tags": [
+          "Summary"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/transaction": {
       "get": {
         "tags": [
@@ -339,6 +368,27 @@
         },
         "additionalProperties": false
       },
+      "AccountSummaryDto": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/TransactionType"
+          },
+          "balance": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "AccountType": {
         "enum": [
           1,
@@ -440,6 +490,23 @@
           "age": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SummaryDto": {
+        "type": "object",
+        "properties": {
+          "totalBalance": {
+            "type": "number",
+            "format": "double"
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountSummaryDto"
+            },
             "nullable": true
           }
         },

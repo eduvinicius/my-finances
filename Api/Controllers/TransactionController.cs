@@ -8,12 +8,12 @@ namespace MyFinances.Api.Controllers
 {
     [ApiController]
     [Route("api/transaction")]
+    [Authorize]
     public class TransactionController(ITransactionService transactionService) : ControllerBase
     {
         private readonly ITransactionService _transactionService = transactionService;
 
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> GetTransactions([FromQuery] TransactionFilters filters)
         {
             var transactions = await _transactionService.GetAllByUserId(filters);
@@ -21,7 +21,6 @@ namespace MyFinances.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize]
         public async Task<IActionResult> GetTransaction(Guid id)
         {
             var transaction = await _transactionService.GetByIdAsync(id);
@@ -33,7 +32,6 @@ namespace MyFinances.Api.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> CreateTransaction([FromBody] TransactionDto dto)
         {
             var transaction = await _transactionService.CreateAsync(dto);

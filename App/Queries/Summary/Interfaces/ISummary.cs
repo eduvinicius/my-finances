@@ -1,0 +1,9 @@
+﻿using MyFinances.Api.DTOs;
+
+namespace MyFinances.App.Queries.Summary.Interfaces
+{
+    public interface ISummaryQuery
+    {
+        Task<SummaryDto> GetAllSummariesAsync();
+    }
+}

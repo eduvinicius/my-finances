@@ -1,15 +1,17 @@
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using MyFinances.Api.Mapping;
+using MyFinances.Api.Middleware;
+using MyFinances.App.Queries.Summary;
+using MyFinances.App.Queries.Summary.Interfaces;
 using MyFinances.App.Services;
 using MyFinances.App.Services.Interfaces;
 using MyFinances.Infrasctructure.Data;
-using MyFinances.Infrasctructure.Repositories.Interfaces;
-using Microsoft.OpenApi.Models;
-using MyFinances.Infrasctructure.Security;
-using Microsoft.IdentityModel.Tokens;
-using MyFinances.Api.Middleware;
 using MyFinances.Infrasctructure.Repositories;
+using MyFinances.Infrasctructure.Repositories.Interfaces;
+using MyFinances.Infrasctructure.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -175,6 +177,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<ISummaryQuery, SummaryQuery>();
 
 var app = builder.Build();
 

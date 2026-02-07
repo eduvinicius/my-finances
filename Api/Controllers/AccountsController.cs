@@ -7,13 +7,13 @@ namespace MyFinances.Api.Controllers
 {
     [ApiController]
     [Route("api/accounts")]
+    [Authorize]
     public class AccountsController(IAccountService accountService)
         : ControllerBase
     {
         private readonly IAccountService _accountService = accountService;
 
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> GetAllAccounts()
         {
             var accounts = await _accountService.GetAllAsync();
@@ -28,7 +28,6 @@ namespace MyFinances.Api.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> CreateAccount([FromBody] AccountDto dto)
         {
             var account = await _accountService.CreateAsync(dto);
@@ -37,7 +36,6 @@ namespace MyFinances.Api.Controllers
 
 
         [HttpDelete("{id}")]
-        [Authorize]
         public async Task<IActionResult> DeactivateAccount(Guid id)
         {
             await _accountService.DeactivateAsync(id);
