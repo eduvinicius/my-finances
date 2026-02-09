@@ -1,4 +1,4 @@
-﻿namespace MyFinances.App.Queries.Summary.Interfaces
+﻿namespace MyFinances.App.Queries.Interfaces
 {
     public class ExpensesAndIncomeAggregates
     {

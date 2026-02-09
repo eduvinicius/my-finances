@@ -117,8 +117,44 @@
   },
   {
     "ContainingType": "MyFinances.Api.Controllers.SummaryController",
-    "Method": "Get",
-    "RelativePath": "api/Summary",
+    "Method": "GetCategoryReport",
+    "RelativePath": "api/Summary/category",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "transactionType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MyFinances.Api.DTOs.CategoryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyFinances.Api.Controllers.SummaryController",
+    "Method": "GetSummary",
+    "RelativePath": "api/Summary/summary",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

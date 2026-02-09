@@ -4,8 +4,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MyFinances.Api.Mapping;
 using MyFinances.Api.Middleware;
+using MyFinances.App.Queries.CategoryReport;
+using MyFinances.App.Queries.Interfaces;
 using MyFinances.App.Queries.Summary;
-using MyFinances.App.Queries.Summary.Interfaces;
 using MyFinances.App.Services;
 using MyFinances.App.Services.Interfaces;
 using MyFinances.Infrasctructure.Data;
@@ -178,6 +179,7 @@ builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ISummaryQuery, SummaryQuery>();
+builder.Services.AddScoped<ICategoryReport, CategoryReport>();
 
 var app = builder.Build();
 

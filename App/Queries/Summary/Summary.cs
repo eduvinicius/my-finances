@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyFinances.Api.DTOs;
-using MyFinances.App.Queries.Summary.Interfaces;
+using MyFinances.App.Queries.Interfaces;
 using MyFinances.App.Services.Interfaces;
 using MyFinances.Domain.Enums;
 using MyFinances.Infrasctructure.Data;

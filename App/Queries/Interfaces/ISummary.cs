@@ -1,6 +1,6 @@
 ﻿using MyFinances.Api.DTOs;
 
-namespace MyFinances.App.Queries.Summary.Interfaces
+namespace MyFinances.App.Queries.Interfaces
 {
     public interface ISummaryQuery
     {

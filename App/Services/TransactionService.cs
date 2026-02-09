@@ -100,9 +100,10 @@ namespace MyFinances.App.Services
             {
                 throw new BadRequestException("Amount must be negative for expenses.");
             }
-            else if (type == TransactionType.Income && amount < 0)
+
+           if ((type == TransactionType.Income || type == TransactionType.Investment) && amount < 0)
             {
-                throw new BadRequestException("Amount must be positive for incomes.");
+                throw new BadRequestException("Amount must be positive for incomes and investments.");
             }
         }
 

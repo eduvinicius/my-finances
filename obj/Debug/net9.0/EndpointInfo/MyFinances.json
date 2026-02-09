@@ -198,7 +198,7 @@
         }
       }
     },
-    "/api/Summary": {
+    "/api/Summary/summary": {
       "get": {
         "tags": [
           "Summary"
@@ -238,6 +238,60 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SummaryDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Summary/category": {
+      "get": {
+        "tags": [
+          "Summary"
+        ],
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "transactionType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/TransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDto"
                 }
               }
             }
