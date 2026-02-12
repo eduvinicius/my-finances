@@ -5,6 +5,7 @@ using MyFinances.Infrasctructure.Repositories.Interfaces;
 using AutoMapper;
 using MyFinances.Infrasctructure.Security;
 using MyFinances.Domain.Exceptions;
+using MyFinances.Api.Models;
 
 namespace MyFinances.App.Services
 {
@@ -39,7 +40,7 @@ namespace MyFinances.App.Services
             _logger.LogInformation("User {UserId} registered successfully with email: {Email}", user.Id, dto.Email);
         }
 
-        public async Task<string> LoginAsync(LoginDto dto)
+        public async Task<UserResponse> LoginAsync(LoginDto dto)
         {
             _logger.LogInformation("Login attempt for email: {Email}", dto.Email);
 
@@ -55,7 +56,15 @@ namespace MyFinances.App.Services
             var token = _jwt.GenerateToken(user);
             _logger.LogInformation("User {UserId} logged in successfully", user.Id);
 
-            return token;
+            var response = new UserResponse
+            {
+                FullName = user.FullName,
+                NickName = user.Nickname,
+                Token = token,
+                UserId = user.Id
+            };
+
+            return response;
         }
     }
 }

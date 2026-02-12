@@ -20,8 +20,8 @@ namespace MyFinances.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto dto)
         {
-            var token = await _authService.LoginAsync(dto);
-            return Ok(new { token });
+            var userResponse = await _authService.LoginAsync(dto);
+            return Ok(userResponse);
         }
     }
 }

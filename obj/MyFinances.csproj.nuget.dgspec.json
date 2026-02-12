@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\projetos-c#\\MyFinances\\MyFinances\\MyFinances.csproj": {}
+    "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\Finances\\finances-backend\\MyFinances\\MyFinances.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\projetos-c#\\MyFinances\\MyFinances\\MyFinances.csproj": {
+    "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\Finances\\finances-backend\\MyFinances\\MyFinances.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\projetos-c#\\MyFinances\\MyFinances\\MyFinances.csproj",
+        "projectUniqueName": "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\Finances\\finances-backend\\MyFinances\\MyFinances.csproj",
         "projectName": "MyFinances",
-        "projectPath": "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\projetos-c#\\MyFinances\\MyFinances\\MyFinances.csproj",
+        "projectPath": "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\Finances\\finances-backend\\MyFinances\\MyFinances.csproj",
         "packagesPath": "C:\\Users\\Microsoft\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\projetos-c#\\MyFinances\\MyFinances\\obj\\",
+        "outputPath": "C:\\Users\\Microsoft\\Documents\\Eduardo\\Programacao\\Finances\\finances-backend\\MyFinances\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

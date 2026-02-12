@@ -1,10 +1,11 @@
 ﻿using MyFinances.Api.DTOs;
+using MyFinances.Api.Models;
 
 namespace MyFinances.App.Services.Interfaces
 {
     public interface IAuthService
     {
         Task RegisterAsync(RegisterDto dto);
-        Task<string> LoginAsync(LoginDto dto);
+        Task<UserResponse> LoginAsync(LoginDto dto);
     }
 }
